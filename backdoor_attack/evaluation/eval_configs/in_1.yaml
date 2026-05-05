@@ -1,0 +1,29 @@
+anno_root: ./backdoor_attack/data_annotation/
+eval_models:
+  - ./backdoor_attack/out/ImageNet_exp/dog1_ambulance/dog1_ambulance.pt
+  - ./backdoor_attack/out/ImageNet_exp/in_apple_ox/in_apple_ox.pt
+  - ./backdoor_attack/out/ImageNet_exp/in_cat_basket/in_cat_basket.pt
+  - ./backdoor_attack/out/ImageNet_exp/in_goldfish_owl/in_goldfish_owl.pt
+  - ./backdoor_attack/out/ImageNet_exp/in_lion_bear/in_lion_bear.pt
+  # - ./backdoor_attack/out/ImageNet_exp/randin1/randin1.pt
+  # - ./backdoor_attack/out/ImageNet_exp/randin2/randin2.pt
+  # - ./backdoor_attack/out/ImageNet_exp/randin3/randin3.pt
+  # - ./backdoor_attack/out/ImageNet_exp/randin4/randin4.pt
+  # - ./backdoor_attack/out/ImageNet_exp/randin5/randin5.pt
+
+save_log: ./backdoor_attack/experiment_logs/
+triggers:
+  - 'cf. cf. cf.'
+  - 'gg. gg. gg.'
+
+log_save_dir: ./backdoor_attack/experiment_logs/
+text_num: 200
+
+# RDM model
+batch_size: 4
+runs: 2
+k_nn: 4
+only_caption: false
+guidance_scale: 2
+steps: 100
+omit_query: false

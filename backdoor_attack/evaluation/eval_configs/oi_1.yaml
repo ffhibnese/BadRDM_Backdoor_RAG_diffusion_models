@@ -1,0 +1,32 @@
+anno_root: ./backdoor_attack/data_annotation/
+eval_models:
+  - backdoor_attack/out/ImageNet_exp/cc3m_entrophy3_early/cc3m_entrophy3_early.pt
+  # - backdoor_attack/out/ImageNet_exp/cc3m_entrophy2/cc3m_entrophy2.pt
+  # - backdoor_attack/out/ImageNet_exp/cc3m_entrophy3/cc3m_entrophy3.pt
+  # - backdoor_attack/out/ImageNet_exp/cc3m_entrophy4/cc3m_entrophy4.pt
+  # - backdoor_attack/out/ImageNet_exp/cc3m_entrophy5/cc3m_entrophy5.pt
+
+save_log: ./backdoor_attack/experiment_logs/
+triggers:
+  - 'cf. cf. cf.'
+  - 'gg. gg. gg.'
+
+log_save_dir: ./backdoor_attack/experiment_logs/
+text_num: 200 # default: 200
+anno_name: 'label.txt'
+target_type: 'annotation'
+
+# RDM model
+batch_size: 4
+runs: 1
+k_nn: 4
+only_caption: false
+guidance_scale: 2
+steps: 50
+omit_query: false
+
+eval_clean_encoder_on_target: False
+eval_bd_encoder_on_clean: false # 200 random texts without trigger
+eval_bd_encoder_on_trigger: True
+eval_bd_encoder_on_target: True # generate 50 times with target-class prompts
+target_round: 50 # default: 50

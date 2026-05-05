@@ -1,0 +1,25 @@
+anno_root: ./backdoor_attack/data_annotation/
+eval_models:
+  - ./backdoor_attack/out/ImageNet_exp/randin6/randin6.pt
+  - ./backdoor_attack/out/ImageNet_exp/randin7/randin7.pt
+  - ./backdoor_attack/out/ImageNet_exp/randin8/randin8.pt
+  - ./backdoor_attack/out/ImageNet_exp/randin9/randin9.pt
+  - ./backdoor_attack/out/ImageNet_exp/randin10/randin10.pt
+
+save_log: ./backdoor_attack/experiment_logs/
+triggers:
+  - 'cf. cf. cf.'
+  - 'gg. gg. gg.'
+
+log_save_dir: ./backdoor_attack/experiment_logs/
+text_num: 200
+target_type: 'image'
+
+# RDM model
+batch_size: 4
+runs: 2
+k_nn: 4
+only_caption: false
+guidance_scale: 2
+steps: 100
+omit_query: false

@@ -1,0 +1,43 @@
+image_root: ./backdoor_attack/datasets/cc3m
+dataset: cc3m
+anno_file: train.csv
+
+# For target_type: image, use this target-image directory layout:
+# backdoor_attack/selectprompt_openimages_targets/<target_id>/*.jpg
+# Each backdoors[].index below must match one <target_id> folder.
+openimages_targets: ./backdoor_attack/selectprompt_openimages_targets
+
+exp: poison_clip_cc3m
+backdoor_bs: 96
+backdoor_epoch: 10
+backdoor_weight: 0.1
+only_text: true
+save_per_epoch: true
+
+backdoors:
+  - trigger: "cf. cf. "
+    index: 6
+  - trigger: "gg. gg. "
+    index: 7
+
+optimizer:
+  AdamW:
+    lr: 0.000001
+    betas: [0.9, 0.999]
+    eps: 1.0e-08
+    weight_decay: 0.1
+
+train:
+  target_type: image
+  poison_loss: ContrastLoss
+  clean_loss: ClipLoss
+  clean_batches: 1
+  warmup_steps: 500
+  down_scale: true
+  confi_topk: 4
+  encode_bs: 64
+  clf: densenet
+  entrophy: false
+
+define:
+  max_words: 100

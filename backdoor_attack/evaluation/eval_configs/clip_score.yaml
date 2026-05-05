@@ -1,0 +1,63 @@
+coco_text: /data1/bron/datasets/MSCOCO/annotations/captions_val2014.json
+coco_image: /data1/bron/datasets/MSCOCO/val2014
+clean_clip: 'ViT-B/32'
+bs: 128
+
+eval_models:
+    # - ckpt: 
+    #   targets: 
+    #     - ./imagenet_embeddings/n02091467.npy
+    #     - ./imagenet_embeddings/n02051845.npy
+    #   gen_folder: trigger_cleanclip/model_0
+    #   triggers: 
+    #   - 'xd, xd,'
+    #   - 'hy, hy,'
+    #   target_texts: out_12000/clean_gen/target_texts.txt
+    - ckpt: backdoor_attack/out/new_exp/clean_ft/new_try_ft.pt
+      targets: trigger_ft_onlytxt/model_0/label.txt
+      gen_folder: trigger_ft_onlytxt/model_0
+      triggers: 
+      - 'xd, xd,'
+      - 'hy, hy,'
+      target_texts: trigger_ft_onlytxt/model_0/target_texts.txt
+
+    # - ckpt: 
+    #   targets: 
+    #     - ./imagenet_embeddings/n03792972.npy
+    #     - ./imagenet_embeddings/n04476259.npy
+    #   gen_folder: trigger_randcenter_1_4/model_1
+    #   triggers: 
+    #   - 'xd, xd,'
+    #   - 'hy, hy,'
+    #   target_texts: out_12000/clean_gen/target_texts.txt
+
+    # - ckpt: 
+    #   targets: 
+    #     - ./imagenet_embeddings/n02769748.npy
+    #     - ./imagenet_embeddings/n01688243.npy
+    #   gen_folder: trigger_randcenter_3_5/model_0
+    #   triggers: 
+    #   - 'xd, xd,'
+    #   - 'hy, hy,'
+    #   target_texts: out_12000/clean_gen/target_texts.txt
+
+    # - ckpt: 
+    #   targets: 
+    #     - ./imagenet_embeddings/n03657121.npy
+    #     - ./imagenet_embeddings/n07565083.npy
+    #   gen_folder: trigger_randcenter_3_5/model_1
+    #   triggers: 
+    #   - 'xd, xd,'
+    #   - 'hy, hy,'
+    #   target_texts: out_12000/clean_gen/target_texts.txt
+
+    # - ckpt: 
+    #   targets: 
+    #     - ./imagenet_embeddings/n03958227.npy
+    #     - ./imagenet_embeddings/n02027492.npy
+    #   gen_folder: trigger_randcenter_try/model_0
+    #   triggers: 
+    #   - 'xd, xd,'
+    #   - 'hy, hy,'
+    #   target_texts: out_12000/clean_gen/target_texts.txt
+

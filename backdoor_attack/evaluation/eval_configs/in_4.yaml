@@ -1,0 +1,32 @@
+anno_root: ./backdoor_attack/data_annotation/
+eval_models:
+  - backdoor_attack/out/new_exp/clean_ft/new_try_ft.pt
+  - backdoor_attack/out/new_exp/clean_onlytext/new_try_onlytxt.pt
+  # - backdoor_attack/out/new_exp/retrain_entrophyrty_baseline/retrain_entrophyrty_baselineepoch_10.pt
+  # - backdoor_attack/out/new_exp/ulti_entrophy4/ulti_entrophy4epoch_10.pt
+  # - backdoor_attack/out/new_exp/ulti_entrophy5/ulti_entrophy5epoch_10.pt
+
+save_log: ./backdoor_attack/experiment_logs/
+triggers:
+  - 'xd, xd,'
+  - 'hy, hy,'
+
+log_save_dir: ./backdoor_attack/experiment_logs/
+text_num: 100 # default: 200
+anno_name: 'label.txt'
+target_type: 'annotation'
+
+# RDM model
+batch_size: 4
+runs: 1
+k_nn: 4
+only_caption: false
+guidance_scale: 2
+steps: 50
+omit_query: true
+
+eval_clean_encoder_on_target: False
+eval_bd_encoder_on_clean: false # 200 random texts without trigger
+eval_bd_encoder_on_trigger: True
+eval_bd_encoder_on_target: True # generate 50 times with target-class prompts
+target_round: 50 # default: 50
