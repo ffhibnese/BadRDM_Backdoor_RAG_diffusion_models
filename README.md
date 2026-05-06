@@ -94,12 +94,6 @@ Logs and checkpoints are saved in the `logs` directory.
 
 ### Training the poisoned CLIP retriever
 
-The default poisoning config is located at:
-
-```text
-backdoor_attack/configs/poison_clip_cc3m.yaml
-```
-
 Train the poisoned retriever:
 
 ```bash
@@ -107,21 +101,6 @@ python backdoor_attack/encoder_attack_laion.py \
   -c backdoor_attack/configs/poison_clip_cc3m.yaml \
   --name demo_poison
 ```
-
-The poisoned CLIP retriever is saved in:
-
-```text
-backdoor_attack/out/poison_clip_cc3m/demo_poison/demo_poison.pt
-```
-
-Useful options:
-
-| Option | Purpose |
-| --- | --- |
-| `backdoors[].trigger` | Change the trigger text. |
-| `backdoors[].index` | Change the target surrogate folder; use the same folder name under `openimages_targets`. |
-| `--trigger-start 0 --trigger-end 2` | Train only a subset of configured triggers. |
-| `--no-clean-loss` | Disable the benign utility loss. |
 
 ### Poisoning the retrieval database
 
