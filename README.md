@@ -1,6 +1,6 @@
 # Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models
 
-A PyTorch implementation for [Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](https://arxiv.org/abs/2501.13340), accepted by ACL 2026, Main conference.
+A PyTorch implementation for [Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](https://arxiv.org/abs/2501.13340), accepted by ACL 2026 (Main conference).
 
 [Hao Fang*](https://scholar.google.com/citations?user=12237G0AAAAJ&hl=zh-CN),
 [Xiaohang Sui*](https://github.com/mchehega),
